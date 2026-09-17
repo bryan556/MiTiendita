@@ -1,0 +1,139 @@
+{% extends 'tienda/base.html' %}
+
+{% block title %}Editar Usuario{% endblock %}
+
+{% block content %}
+<style>
+    /* Estilos para la lista de validación visual */
+    .reglas-password {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+    .reglas-password li {
+        margin-bottom: 0.3rem;
+        transition: color 0.3s ease;
+    }
+    .reglas-password i {
+        width: 20px;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-0 card-custom" style="border-radius: 15px;">
+            <div class="card-header bg-warning text-dark border-0" style="border-radius: 15px 15px 0 0;">
+                <h4 class="mb-0 fw-bold"><i class="fas fa-user-edit me-2"></i>Editar Usuario</h4>
+            </div>
+            <div class="card-body p-4">
+                
+                <!-- 🔥 AQUÍ ESTÁ EL CANDADO ANTI-ENTER 🔥 -->
+                <form method="POST" action="{% url 'usuario_editar' usuario.IdUsuario %}" onsubmit="return !document.getElementById('btn_guardar').disabled;">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nombre de Usuario</label>
+                        <input type="text" name="nombre" class="form-control" value="{{ usuario.Nombre }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Correo Electrónico</label>
+                        <input type="email" name="correo" class="form-control" value="{{ usuario.Correo|default:'' }}" placeholder="usuario@ejemplo.com" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nueva Contraseña <small class="text-muted fw-normal">(Dejar vacío si no desea cambiar)</small></label>
+                        <div class="input-group shadow-sm">
+                            <input type="password" id="nueva_password" name="contrasena" class="form-control" placeholder="Escriba la nueva clave">
+                            <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('nueva_password', this)">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Check-list visual de reglas -->
+                        <ul class="reglas-password text-muted fw-bold">
+                            <li id="regla-longitud" class="text-danger"><i class="fas fa-times"></i> Mínimo 8 caracteres</li>
+                            <li id="regla-mayuscula" class="text-danger"><i class="fas fa-times"></i> Al menos una mayúscula</li>
+                            <li id="regla-numero" class="text-danger"><i class="fas fa-times"></i> Al menos un número</li>
+                            <li id="regla-especial" class="text-danger"><i class="fas fa-times"></i> Un carácter especial (*, !, @...)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Rol</label>
+                        <select name="rol" class="form-select">
+                            <option value="Empleado" {% if usuario.Rol == 'Empleado' %}selected{% endif %}>Empleado</option>
+                            <option value="Admin" {% if usuario.Rol == 'Admin' %}selected{% endif %}>Administrador</option>
+                        </select>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="btn_guardar" class="btn btn-warning fw-bold shadow-sm" style="border-radius: 8px;">Actualizar Datos</button>
+                        <a href="{% url 'usuarios_lista' %}" class="btn btn-outline-secondary shadow-sm" style="border-radius: 8px;">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mostrar/Ocultar Contraseña
+    function togglePassword(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const icon = btn.querySelector('i');
+        if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            input.type = 'password';
+            icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+
+    // Validación en tiempo real (ignora si está vacío)
+    const passInput = document.getElementById('nueva_password');
+    const btnGuardar = document.getElementById('btn_guardar');
+
+    function checkRules() {
+        const pass = passInput.value;
+        
+        // Si el usuario borra todo, rehabilitamos el botón (cambio opcional)
+        if (pass === '') {
+            btnGuardar.disabled = false;
+            document.querySelectorAll('.reglas-password li').forEach(li => {
+                li.classList.remove('text-success');
+                li.classList.add('text-danger');
+                li.querySelector('i').classList.replace('fa-check', 'fa-times');
+            });
+            return;
+        }
+
+        let allValid = true;
+
+        function setStatus(id, isValid) {
+            const element = document.getElementById(id);
+            const icon = element.querySelector('i');
+            if (isValid) {
+                element.classList.replace('text-danger', 'text-success');
+                icon.classList.replace('fa-times', 'fa-check');
+            } else {
+                element.classList.replace('text-success', 'text-danger');
+                icon.classList.replace('fa-check', 'fa-times');
+                allValid = false;
+            }
+        }
+
+        setStatus('regla-longitud', pass.length >= 8);
+        setStatus('regla-mayuscula', /[A-Z]/.test(pass));
+        setStatus('regla-numero', /[0-9]/.test(pass));
+        setStatus('regla-especial', /[^A-Za-z0-9]/.test(pass));
+
+        btnGuardar.disabled = !allValid;
+    }
+
+    passInput.addEventListener('input', checkRules);
+</script>
+{% endblock %}

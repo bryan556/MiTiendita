@@ -1,0 +1,34 @@
+{% extends 'tienda/base.html' %}
+{% block title %}Vincular Celular OTP{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow border-0 card-custom" style="border-radius: 15px;">
+                <div class="card-header bg-primary text-white border-0 text-center py-3" style="border-radius: 15px 15px 0 0;">
+                    <h5 class="mb-0 fw-bold"><i class="fas fa-mobile-alt me-2"></i>Vincular Autenticador</h5>
+                </div>
+                
+                <div class="card-body p-5 text-center">
+                    <i class="fas fa-qrcode fa-4x text-primary mb-3"></i>
+                    <h4 class="fw-bold mb-3">Protege tu cuenta</h4>
+                    <p class="text-muted mb-4">Escanea este código QR con Google Authenticator, Authy o Microsoft Authenticator para vincular tu dispositivo móvil de forma segura.</p>
+                    
+                    <div class="d-inline-block p-3 bg-white border border-2 rounded-3 shadow-sm mb-4">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ uri }}" alt="QR OTP">
+                    </div>
+
+                    <div class="alert alert-warning small text-start border-0 shadow-sm rounded-3">
+                        <i class="fas fa-exclamation-triangle me-2"></i><strong>Atención:</strong> No compartas esta pantalla con nadie. Si pierdes el acceso a tu autenticador, contacta al administrador.
+                    </div>
+
+                    <a href="{% url 'dashboard' %}" class="btn btn-secondary fw-bold px-4 py-2 mt-2 shadow-sm" style="border-radius: 8px;">
+                        <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

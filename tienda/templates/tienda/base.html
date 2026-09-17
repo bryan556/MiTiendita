@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- El motor de HTMX agregado aquí -->
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+    <title>{% block title %}Mi Tiendita{% endblock %}</title>
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; transition: background-color 0.3s, color 0.3s; }
+
+        /* --- CONFIGURACIÓN DEL LAYOUT ESTRUCTURAL --- */
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar lateral fijo */
+        .sidebar {
+            width: 260px;
+            min-width: 260px;
+            max-width: 260px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            transition: all 0.3s;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.05);
+        }
+
+        /* Contenido principal a la derecha */
+        .main-content {
+            flex-grow: 1;
+            margin-left: 260px; /* El mismo ancho de la sidebar para no solaparse */
+            padding: 2rem;
+            width: calc(100% - 260px);
+        }
+
+        /* --- MODO CLARO --- */
+        [data-bs-theme="light"] body { background-color: #f3f4f6; color: #212529; }
+        [data-bs-theme="light"] .sidebar { background: linear-gradient(to bottom, #1e3c72, #2a5298); }
+        
+        /* --- MODO OSCURO (MEJORADO) --- */
+        [data-bs-theme="dark"] body { background-color: #121212; color: #e0e0e0; }
+        [data-bs-theme="dark"] .sidebar { background: linear-gradient(to bottom, #0f2027, #15262c); border-right: 1px solid #333; }
+        [data-bs-theme="dark"] .card { background-color: #1e1e1e; border-color: #333; }
+        
+        /* Inputs más visibles en oscuro */
+        [data-bs-theme="dark"] .form-control, 
+        [data-bs-theme="dark"] .form-select { 
+            background-color: #2b2b2b; 
+            border-color: #555; 
+            color: #fff; 
+        }
+        [data-bs-theme="dark"] .form-control:focus { 
+            background-color: #333; 
+            border-color: #0d6efd; 
+            color: #fff; 
+        }
+        [data-bs-theme="dark"] .form-control::placeholder { color: #aaa; }
+        [data-bs-theme="dark"] .input-group-text { background-color: #333; border-color: #555; color: #fff; }
+
+        /* Tablas más legibles */
+        [data-bs-theme="dark"] .table { color: #e0e0e0; border-color: #444; }
+        [data-bs-theme="dark"] .table-hover tbody tr:hover { background-color: #333; color: #fff; }
+        
+        /* Comunes */
+        .card { border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+
+        /* --- DISEÑO DE LOS LINKS VERTICALES --- */
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.65) !important;
+            font-weight: 400;
+            padding: 0.65rem 1.5rem;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            margin: 0.2rem 0.75rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .sidebar .nav-link i {
+            width: 25px;
+            font-size: 1.1rem;
+        }
+        .sidebar .nav-link:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Estilo activo destacado */
+        .sidebar .nav-link.active-link {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+            border-left: 4px solid #fff;
+        }
+        
+        /* Contenedor scrolleable si hay muchos links */
+        .menu-container {
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .menu-container::-webkit-scrollbar { width: 4px; }
+        .menu-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    </style>
+</head>
+<!-- Inyectamos el Token de Seguridad de Django para que HTMX lo use siempre -->
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+    <div id="alert-container" class="position-fixed top-0 end-0 p-3" style="z-index: 9999; max-width: 400px; margin-top: 20px;">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow border-0 bg-white text-dark d-flex align-items-center mb-2">
+                    {% if message.tags == 'success' %} <i class="fas fa-check-circle text-success fs-4 me-3"></i>
+                    {% elif message.tags == 'error' %} <i class="fas fa-exclamation-circle text-danger fs-4 me-3"></i>
+                    {% else %} <i class="fas fa-info-circle text-primary fs-4 me-3"></i> {% endif %}
+                    <div class="small fw-bold">{{ message }}</div>
+                    <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="wrapper">
+        
+        <nav class="sidebar">
+            <div class="p-4 border-bottom border-white-10 text-center">
+                <a class="text-white text-decoration-none fs-4 fw-bold letter-spacing-1 d-block" href="{% url 'dashboard' %}">
+                    <i class="fas fa-store me-2"></i>Mi Tiendita
+                </a>
+            </div>
+
+            <div class="menu-container py-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'productos_lista' %}"><i class="fas fa-box-open"></i> Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'clientes_lista' %}"><i class="fas fa-users"></i> Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'proveedores_lista' %}"><i class="fas fa-truck-loading"></i> Proveedores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'control_caja' %}"><i class="fas fa-cash-register"></i> Caja (Turno)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'reportes_view' %}"><i class="fas fa-chart-pie"></i> Reportes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'lista_deudores' %}"><i class="fas fa-hand-holding-usd"></i> Fiados</a></li>
+                    
+                    <li class="nav-item my-1">
+                        <a class="nav-link bg-danger text-white fw-bold shadow-sm rounded-pill mx-3 py-2 justify-content-center" href="{% url 'facturacion_view' %}">
+                            <i class="fas fa-file-invoice-dollar me-2"></i> FACTURAR
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'devoluciones_list_view' %}active-link{% endif %}" href="{% url 'devoluciones_list_view' %}">
+                            <i class="fas fa-exchange-alt"></i> Operaciones
+                        </a>
+                    </li>                    
+                    
+                    <li class="nav-item"><a class="nav-link" href="{% url 'historial_facturas' %}"><i class="fas fa-history"></i> Historial</a></li>
+                    
+                    {% if request.session.user_rol == 'Admin' %}
+                        <li class="nav-item border-top border-white-10 my-2 pt-2"></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'usuarios_lista' %}"><i class="fas fa-user-cog"></i> Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'proveedor_producto_lista' %}"><i class="fas fa-tags"></i> Costos</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="p-3 border-top border-white-10 bg-black-10 mt-auto">
+                <div class="dropdown">
+                    <button class="btn btn-link text-white text-decoration-none dropdown-toggle d-flex align-items-center w-100 p-1 border-0 justify-content-between" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="d-flex align-items-center text-start lh-1">
+                            <div class="avatar bg-white text-primary rounded-circle p-2 me-2 d-flex align-items-center justify-content-center fw-bold" style="width:35px; height:35px;">
+                                {{ request.session.user_nombre|slice:":1"|upper }}
+                            </div>
+                            <div>
+                                <div class="fw-bold text-truncate" style="max-width: 150px;">{{ request.session.user_nombre }}</div>
+                                <small class="text-white-50" style="font-size: 0.72rem;">{{ request.session.user_rol }}</small>
+                            </div>
+                        </div>
+                    </button>
+                    
+                    <ul class="dropdown-menu dropdown-menu-dark shadow border-0 w-100 mb-2" aria-labelledby="userMenuDropdown" style="border-radius: 10px;">
+                        
+                        <!-- 🔥 BOTÓN NUEVO PARA VINCULAR CELULAR OTP 🔥 -->
+                        <li>
+                            <a href="{% url 'vincular_celular' %}" class="dropdown-item d-flex align-items-center py-2 text-white">
+                                <i class="fas fa-qrcode me-2 text-info"></i> Vincular Autenticador
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li>
+                            <button class="dropdown-item d-flex align-items-center justify-content-between py-2" id="darkModeToggle" type="button">
+                                <span><i class="fas fa-moon me-2 text-muted"></i> Tema</span>
+                                <small class="text-secondary" id="themeStatus">Claro</small>
+                            </button>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <a href="{% url 'logout' %}" class="dropdown-item text-danger d-flex align-items-center py-2 fw-bold">
+                                <i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+    <script>
+        // 1. Desvanecimiento automático de Alertas
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var container = document.getElementById('alert-container');
+                if (container) {
+                    var alerts = container.querySelectorAll('.alert');
+                    alerts.forEach(function(alert) { var bsAlert = new bootstrap.Alert(alert); bsAlert.close(); });
+                }
+            }, 3000);
+
+            // Resaltar la ruta activa dinámicamente en el Sidebar
+            const currentUrl = window.location.pathname;
+            const navLinks = document.querySelectorAll('.sidebar .nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') !== "#" && currentUrl.includes(link.getAttribute('href'))) {
+                    link.classList.add('active-link');
+                }
+            });
+        });
+
+        // 2. Sistema de Persistencia de Modo Oscuro
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const htmlElement = document.documentElement;
+        const icon = toggleBtn.querySelector('i');
+        const statusText = document.getElementById('themeStatus');
+
+        function actualizarTextoTema() {
+            if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+                statusText.innerText = "Oscuro";
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                statusText.innerText = "Claro";
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            htmlElement.setAttribute('data-bs-theme', 'dark');
+            actualizarTextoTema();
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-bs-theme') === 'light') {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+            actualizarTextoTema();
+        });
+    </script>
+    {% block content_scripts %}{% endblock %}
+</body>
+</html>
