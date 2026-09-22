@@ -9,7 +9,8 @@ from django.utils import timezone
 from datetime import timedelta
 from django.contrib import messages
 from django.shortcuts import redirect
-
+from django.db.models import Sum, Count, F
+from django.db.models.functions import TruncMonth, TruncDate
 
 from django.db.models.functions import TruncMonth, TruncDate
 from django.shortcuts import render, redirect, get_object_or_404
@@ -178,21 +179,48 @@ def reportes_view(request):
     except: pass
 
     # 6. Historial Mes a Mes (Flujo Neto)
+# 6. Historial Mes a Mes (Flujo Neto) - Versión compatible con PostgreSQL y SQLite
     historial = {}
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT strftime('%Y-%m', FechaHora) as Mes, SUM(Total) FROM tienda_facturas WHERE anulada=0 GROUP BY Mes")
-        for r in cursor.fetchall():
-            if r[0]: historial[r[0]] = {'ingreso': float(r[1]), 'gasto': 0}
-        cursor.execute("SELECT strftime('%Y-%m', fecha) as Mes, SUM(monto) FROM tienda_egresos GROUP BY Mes")
-        for r in cursor.fetchall():
-            if r[0]:
-                if r[0] not in historial: historial[r[0]] = {'ingreso': 0, 'gasto': 0}
-                historial[r[0]]['gasto'] = float(r[1])
+
+    # Agrupar ingresos por mes usando el ORM
+    ingresos_mes = (Facturas.objects
+                    .filter(anulada=False)
+                    .annotate(mes=TruncMonth('FechaHora'))
+                    .values('mes')
+                    .annotate(total=Sum('Total'))
+                    .order_by())
+
+    for ing in ingresos_mes:
+        if ing['mes']:
+            # Formateamos la fecha a 'YYYY-MM'
+            clave_mes = ing['mes'].strftime('%Y-%m')
+            historial[clave_mes] = {'ingreso': float(ing['total'] or 0), 'gasto': 0.0}
+
+    # Agrupar egresos por mes usando el ORM
+    egresos_mes = (Egresos.objects
+                   .annotate(mes=TruncMonth('fecha'))
+                   .values('mes')
+                   .annotate(total=Sum('monto'))
+                   .order_by())
+
+    for egr in egresos_mes:
+        if egr['mes']:
+            clave_mes = egr['mes'].strftime('%Y-%m')
+            if clave_mes not in historial:
+                historial[clave_mes] = {'ingreso': 0.0, 'gasto': 0.0}
+            historial[clave_mes]['gasto'] = float(egr['total'] or 0)
+
     tabla_historial = []
     for k in sorted(historial.keys(), reverse=True):
         d = historial[k]
-        tabla_historial.append({'mes': k, 'ingreso': f"{d['ingreso']:,.2f}", 'gasto': f"{d['gasto']:,.2f}", 'balance': f"{(d['ingreso']-d['gasto']):,.2f}", 'es_positivo': (d['ingreso']-d['gasto']) >= 0})
-
+        balance = d['ingreso'] - d['gasto']
+        tabla_historial.append({
+            'mes': k, 
+            'ingreso': f"{d['ingreso']:,.2f}", 
+            'gasto': f"{d['gasto']:,.2f}", 
+            'balance': f"{balance:,.2f}", 
+            'es_positivo': balance >= 0
+        })
     # 7. Historial Diario (Ventas Día por Día)
     ventas_por_dia = []
     try:
