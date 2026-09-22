@@ -66,8 +66,12 @@ WSGI_APPLICATION = 'MiTiendita.wsgi.application'
 # --- CAMBIO IMPORTANTE: BASE DE DATOS SQLITE (GRATIS) ---
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mitiendita_db',
+        'USER': 'postgres',
+        'PASSWORD': '^wd+1n26OP0=',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
