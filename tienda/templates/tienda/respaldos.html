@@ -1,0 +1,303 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold m-0"><i class="fas fa-database text-primary me-2"></i> Respaldos del Sistema</h2>
+    </div>
+
+    <!-- Mensajes -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Tarjetas de estadísticas -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 card-custom">
+                <div class="card-body text-center">
+                    <i class="fas fa-file-archive fa-2x text-primary mb-2"></i>
+                    <h3 class="fw-bold m-0">{{ total_respaldos }}</h3>
+                    <small class="text-muted">Respaldos exitosos</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 card-custom">
+                <div class="card-body text-center">
+                    <i class="fas fa-clock fa-2x text-success mb-2"></i>
+                    <h3 class="fw-bold m-0">
+                        {% if ultimo_respaldo %}{{ ultimo_respaldo.fecha_creacion|date:"d/m H:i" }}{% else %}—{% endif %}
+                    </h3>
+                    <small class="text-muted">Último respaldo</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 card-custom">
+                <div class="card-body text-center">
+                    <i class="fas fa-hdd fa-2x text-warning mb-2"></i>
+                    <h3 class="fw-bold m-0">{{ tamaño_total_mb }} MB</h3>
+                    <small class="text-muted">Espacio usado</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3">
+        <!-- Columna izquierda: Respaldo manual + automático -->
+        <div class="col-lg-5">
+            
+            <!-- Respaldo Manual -->
+            <div class="card shadow-sm border-0 mb-3 card-custom">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="m-0 fw-bold"><i class="fas fa-hand-pointer me-2"></i> Respaldo Manual</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted small">Genera un respaldo instantáneo de la base de datos.</p>
+                    <form method="POST" action="{% url 'respaldo_manual' %}">
+                        {% csrf_token %}
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" name="incluir_media" id="incluir_media_manual">
+                            <label class="form-check-label" for="incluir_media_manual">
+                                Incluir archivos de fotos (media) — más lento
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" name="descargar" id="descargar_auto" checked>
+                            <label class="form-check-label" for="descargar_auto">
+                                Descargar el archivo al terminar
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold">
+                            <i class="fas fa-download me-2"></i> Crear Respaldo Ahora
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Respaldo Automático -->
+            <div class="card shadow-sm border-0 card-custom">
+                <div class="card-header bg-success text-white">
+                    <h5 class="m-0 fw-bold"><i class="fas fa-robot me-2"></i> Respaldo Automático</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'respaldo_config' %}">
+                        {% csrf_token %}
+                        
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" name="activo" id="activo" {% if config.activo %}checked{% endif %}>
+                            <label class="form-check-label fw-bold" for="activo">Activar respaldo automático</label>
+                        </div>
+
+                        <label class="fw-bold small mb-2">Días de la semana:</label>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            {% with dias_activos=config.dias_semana|default:"0,1,2,3,4,5,6" %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="0" id="d0" {% if '0' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d0">Lun</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="1" id="d1" {% if '1' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d1">Mar</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="2" id="d2" {% if '2' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d2">Mié</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="3" id="d3" {% if '3' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d3">Jue</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="4" id="d4" {% if '4' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d4">Vie</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="5" id="d5" {% if '5' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d5">Sáb</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dias_semana" value="6" id="d6" {% if '6' in dias_activos %}checked{% endif %}>
+                                <label class="form-check-label" for="d6">Dom</label>
+                            </div>
+                            {% endwith %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="fw-bold small">Hora del respaldo:</label>
+                            <input type="time" name="hora" class="form-control" value="{{ config.hora|time:'H:i' }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="fw-bold small">Máximo de respaldos a conservar:</label>
+                            <input type="number" name="max_respaldos" class="form-control" value="{{ config.max_respaldos|default:30 }}" min="1" max="365">
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" name="incluir_media" id="incluir_media_auto" {% if config.incluir_media %}checked{% endif %}>
+                            <label class="form-check-label" for="incluir_media_auto">
+                                Incluir fotos (media) en cada respaldo
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 fw-bold">
+                            <i class="fas fa-save me-2"></i> Guardar Configuración
+                        </button>
+
+                        {% if config.ultima_ejecucion %}
+                            <small class="text-muted d-block mt-2 text-center">
+                                Último respaldo automático: {{ config.ultima_ejecucion|date:"d/m/Y H:i" }}
+                            </small>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna derecha: Historial + Restaurar -->
+        <div class="col-lg-7">
+            
+            <!-- Historial -->
+            <div class="card shadow-sm border-0 mb-3 card-custom">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h5 class="m-0 fw-bold"><i class="fas fa-history me-2"></i> Historial de Respaldos</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div style="max-height: 400px; overflow-y: auto;">
+                        <table class="table table-hover table-sm mb-0 align-middle">
+                            <thead class="sticky-top border-bottom">
+                                <tr>
+                                    <th class="ps-3">Archivo</th>
+                                    <th class="text-center">Tipo</th>
+                                    <th class="text-center">Tamaño</th>
+                                    <th class="text-center">Fecha</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for r in respaldos %}
+                                <tr {% if not r.exito %}class="table-danger"{% endif %}>
+                                    <td class="ps-3">
+                                        <small class="fw-bold">{{ r.nombre_archivo|truncatechars:35 }}</small>
+                                        {% if r.incluye_media %}<br><small class="text-muted">📷 Con fotos</small>{% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                        {% if r.tipo == 'MANUAL' %}
+                                            <span class="badge bg-primary">Manual</span>
+                                        {% else %}
+                                            <span class="badge bg-success">Auto</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-center">
+                                        <small>{{ r.tamano_kb|floatformat:1 }} KB</small>
+                                    </td>
+                                    <td class="text-center">
+                                        <small>{{ r.fecha_creacion|date:"d/m/y H:i" }}</small>
+                                    </td>
+                                    <td class="text-center">
+                                        {% if r.exito %}
+                                            <a href="{% url 'respaldo_descargar' r.id %}" class="btn btn-sm btn-outline-primary" title="Descargar">
+                                                <i class="fas fa-download"></i>
+                                            </a>
+                                            <button type="button" class="btn btn-sm btn-outline-warning" 
+                                                    data-bs-toggle="modal" data-bs-target="#modalRestaurar{{ r.id }}" title="Restaurar">
+                                                <i class="fas fa-undo"></i>
+                                            </button>
+                                        {% endif %}
+                                        <a href="{% url 'respaldo_eliminar' r.id %}" class="btn btn-sm btn-outline-danger" 
+                                           onclick="return confirm('¿Eliminar este respaldo?');" title="Eliminar">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="5" class="text-center py-5 text-muted">
+                                        <i class="fas fa-inbox fa-2x mb-2 d-block opacity-50"></i>
+                                        No hay respaldos aún
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurar desde archivo -->
+            <div class="card shadow-sm border-0 border-danger card-custom" style="border-width: 2px !important;">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="m-0 fw-bold"><i class="fas fa-exclamation-triangle me-2"></i> Restaurar Respaldo</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning small">
+                        <strong>⚠️ Peligro:</strong> Restaurar un respaldo <strong>REEMPLAZARÁ TODOS los datos actuales</strong>.
+                        Asegúrate de hacer un respaldo manual antes de restaurar.
+                    </div>
+                    
+                    <form method="POST" action="{% url 'respaldo_restaurar' %}" enctype="multipart/form-data" 
+                          onsubmit="return confirm('¿Estás 100% seguro de restaurar este respaldo? Se perderán los datos actuales.');">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="fw-bold small">Subir archivo .zip de respaldo:</label>
+                            <input type="file" name="archivo_respaldo" class="form-control" accept=".zip" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="fw-bold small">Escribe "SI" para confirmar:</label>
+                            <input type="text" name="confirmar" class="form-control" placeholder="SI" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger w-100 fw-bold">
+                            <i class="fas fa-upload me-2"></i> Restaurar Base de Datos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modales para restaurar desde respaldo existente -->
+{% for r in respaldos %}
+    {% if r.exito %}
+    <div class="modal fade" id="modalRestaurar{{ r.id }}" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-exclamation-triangle me-2"></i> Restaurar Respaldo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form method="POST" action="{% url 'respaldo_restaurar' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="id_respaldo" value="{{ r.id }}">
+                    <div class="modal-body">
+                        <p>¿Restaurar el respaldo <strong>{{ r.nombre_archivo }}</strong>?</p>
+                        <p class="text-danger small"><strong>Esto reemplazará TODOS los datos actuales.</strong></p>
+                        <label class="fw-bold small">Escribe "SI" para confirmar:</label>
+                        <input type="text" name="confirmar" class="form-control" placeholder="SI" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-warning fw-bold">
+                            <i class="fas fa-undo me-1"></i> Restaurar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock %}

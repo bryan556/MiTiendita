@@ -164,7 +164,13 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'devoluciones_list_view' %}active-link{% endif %}" href="{% url 'devoluciones_list_view' %}">
                             <i class="fas fa-exchange-alt"></i> Operaciones
                         </a>
-                    </li>                    
+                    </li>
+                    
+                    <li>
+                        <a href="{% url 'respaldos_view' %}" class="nav-link">
+                            <i class="fas fa-database me-2"></i> Respaldos
+                        </a>
+                    </li>
                     
                     <li class="nav-item"><a class="nav-link" href="{% url 'historial_facturas' %}"><i class="fas fa-history"></i> Historial</a></li>
                     

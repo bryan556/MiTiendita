@@ -95,6 +95,13 @@ urlpatterns = [
     # Usamos <int:id_movimiento> para saber exactamente qué registro estamos resolviendo
     path('devoluciones/resolver/<int:id_movimiento>/', views.resolver_pendiente_proveedor, name='resolver_pendiente_proveedor'),
 
+    # --- RESPALDOS ---
+    path('respaldos/', views.respaldos_view, name='respaldos_view'),
+    path('respaldos/manual/', views.respaldo_manual_view, name='respaldo_manual'),
+    path('respaldos/descargar/<int:id_respaldo>/', views.respaldo_descargar_view, name='respaldo_descargar'),
+    path('respaldos/eliminar/<int:id_respaldo>/', views.respaldo_eliminar_view, name='respaldo_eliminar'),
+    path('respaldos/restaurar/', views.respaldo_restaurar_view, name='respaldo_restaurar'),
+    path('respaldos/config/', views.guardar_config_respaldo_view, name='respaldo_config'),
     
 
     

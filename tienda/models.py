@@ -220,4 +220,46 @@ class DevolucionesPerdidas(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.tipo_evento} - {self.producto.nombre} ({self.cantidad})"    
+        return f"{self.tipo_evento} - {self.producto.nombre} ({self.cantidad})"
+
+# ==========================================
+#        MÓDULO DE RESPALDOS
+# ==========================================
+
+class Respaldo(models.Model):
+    TIPOS = [
+        ('MANUAL', 'Manual'),
+        ('AUTOMATICO', 'Automático'),
+    ]
+    
+    nombre_archivo = models.CharField(max_length=255)
+    tipo = models.CharField(max_length=20, choices=TIPOS, default='MANUAL')
+    tamano_kb = models.FloatField(default=0)
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+    creado_por = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    exito = models.BooleanField(default=True)
+    mensaje_error = models.TextField(blank=True, null=True)
+    incluye_media = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'Respaldo'
+        ordering = ['-fecha_creacion']
+
+    def __str__(self):
+        return f"{self.nombre_archivo} ({self.tipo})"
+
+
+class ConfiguracionRespaldo(models.Model):
+    activo = models.BooleanField(default=False)
+    # Días en formato "0,1,2,3,4,5,6" donde 0=Lunes, 6=Domingo
+    dias_semana = models.CharField(max_length=20, default='0,1,2,3,4,5,6')
+    hora = models.TimeField(default='02:00')
+    max_respaldos = models.IntegerField(default=30)
+    incluir_media = models.BooleanField(default=False)
+    ultima_ejecucion = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'ConfiguracionRespaldo'
+
+    def __str__(self):
+        return f"Config respaldo - {'Activo' if self.activo else 'Inactivo'}"    

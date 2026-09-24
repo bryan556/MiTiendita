@@ -10,3 +10,8 @@ env/
 # Archivos de entorno (variables privadas)
 .env
 *.env
+
+# Ignorar los backups y media
+backups/
+imagenes/
+media/

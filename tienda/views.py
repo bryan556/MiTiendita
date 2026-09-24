@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Sum, Count, F
 from django.db.models.functions import TruncMonth, TruncDate
-
+import os
 from django.db.models.functions import TruncMonth, TruncDate
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
@@ -1736,3 +1736,187 @@ def resolver_pendiente_proveedor(request, id_movimiento):
         messages.error(request, f"Error: {e}")
         
     return redirect('devoluciones_list_view')
+
+# ==========================================
+#        MÓDULO DE RESPALDOS
+# ==========================================
+
+from django.core.files.storage import FileSystemStorage
+from django.http import FileResponse
+from tienda.management.commands.respaldo_automatico import (
+    crear_respaldo, limpiar_respaldos_viejos, restaurar_respaldo
+)
+from .models import Respaldo, ConfiguracionRespaldo
+
+
+@admin_requerido
+def respaldos_view(request):
+    """Página principal del módulo de respaldos"""
+    respaldos = Respaldo.objects.all()[:50]
+    config = ConfiguracionRespaldo.objects.first()
+    
+    if not config:
+        config = ConfiguracionRespaldo.objects.create()
+    
+    # Estadísticas
+    total_respaldos = Respaldo.objects.filter(exito=True).count()
+    ultimo_respaldo = Respaldo.objects.filter(exito=True).first()
+    tamaño_total = sum(r.tamano_kb for r in Respaldo.objects.filter(exito=True)) / 1024  # MB
+    
+    context = {
+        'respaldos': respaldos,
+        'config': config,
+        'total_respaldos': total_respaldos,
+        'ultimo_respaldo': ultimo_respaldo,
+        'tamaño_total_mb': round(tamaño_total, 2),
+        'nombre_usuario': request.session.get('user_nombre'),
+        'rol_usuario': request.session.get('user_rol'),
+    }
+    return render(request, 'tienda/respaldos.html', context)
+
+
+@admin_requerido
+def respaldo_manual_view(request):
+    """Crea un respaldo manual y lo descarga"""
+    if request.method == 'POST':
+        incluir_media = request.POST.get('incluir_media') == 'on'
+        
+        usuario_obj = None
+        if 'user_id' in request.session:
+            from django.contrib.auth.models import User
+            usuario_obj = User.objects.filter(id=request.session['user_id']).first()
+        
+        resultado = crear_respaldo(
+            tipo='MANUAL',
+            incluir_media=incluir_media,
+            creado_por=usuario_obj
+        )
+        
+        if resultado['exito']:
+            messages.success(request, f"✅ Respaldo creado: {resultado['nombre']} ({resultado['tamano_kb']:.2f} KB)")
+            
+            # Si pidieron descarga, devolver el archivo
+            if request.POST.get('descargar') == 'on':
+                return FileResponse(
+                    open(resultado['ruta'], 'rb'),
+                    as_attachment=True,
+                    filename=resultado['nombre']
+                )
+        else:
+            messages.error(request, f"❌ Error al crear respaldo: {resultado['mensaje']}")
+    
+    return redirect('respaldos_view')
+
+
+@admin_requerido
+def respaldo_descargar_view(request, id_respaldo):
+    """Descarga un respaldo existente"""
+    respaldo = get_object_or_404(Respaldo, pk=id_respaldo)
+    ruta = os.path.join(settings.BASE_DIR, 'backups', respaldo.nombre_archivo)
+    
+    if not os.path.exists(ruta):
+        messages.error(request, "El archivo de respaldo no existe en el disco.")
+        return redirect('respaldos_view')
+    
+    return FileResponse(
+        open(ruta, 'rb'),
+        as_attachment=True,
+        filename=respaldo.nombre_archivo
+    )
+
+
+@admin_requerido
+def respaldo_eliminar_view(request, id_respaldo):
+    """Elimina un respaldo"""
+    respaldo = get_object_or_404(Respaldo, pk=id_respaldo)
+    ruta = os.path.join(settings.BASE_DIR, 'backups', respaldo.nombre_archivo)
+    
+    if os.path.exists(ruta):
+        try:
+            os.remove(ruta)
+        except:
+            pass
+    
+    respaldo.delete()
+    messages.success(request, "🗑️ Respaldo eliminado.")
+    return redirect('respaldos_view')
+
+
+@admin_requerido
+def respaldo_restaurar_view(request):
+    """Restaura la BD desde un archivo subido o uno existente"""
+    if request.method == 'POST':
+        # Opción A: Restaurar desde archivo subido
+        if 'archivo_respaldo' in request.FILES:
+            archivo = request.FILES['archivo_respaldo']
+            
+            if not archivo.name.endswith('.zip'):
+                messages.error(request, "❌ Solo se aceptan archivos .zip")
+                return redirect('respaldos_view')
+            
+            # Guardar temporalmente
+            carpeta_backups = os.path.join(settings.BASE_DIR, 'backups')
+            os.makedirs(carpeta_backups, exist_ok=True)
+            
+            nombre_archivo = f"restauracion_{datetime.now().strftime('%Y%m%d_%H%M%S')}.zip"
+            ruta_temporal = os.path.join(carpeta_backups, nombre_archivo)
+            
+            with open(ruta_temporal, 'wb+') as f:
+                for chunk in archivo.chunks():
+                    f.write(chunk)
+        
+        # Opción B: Restaurar desde un respaldo existente
+        elif request.POST.get('id_respaldo'):
+            respaldo = get_object_or_404(Respaldo, pk=request.POST['id_respaldo'])
+            ruta_temporal = os.path.join(settings.BASE_DIR, 'backups', respaldo.nombre_archivo)
+        
+        else:
+            messages.error(request, "No se especificó ningún archivo.")
+            return redirect('respaldos_view')
+        
+        # Confirmar restauración
+        if request.POST.get('confirmar') != 'SI':
+            messages.error(request, "Debes confirmar la restauración escribiendo 'SI'.")
+            return redirect('respaldos_view')
+        
+        # Ejecutar restauración
+        resultado = restaurar_respaldo(ruta_temporal)
+        
+        if resultado['exito']:
+            messages.success(request, "✅ Base de datos restaurada correctamente. Cierra sesión y vuelve a entrar.")
+            return redirect('login')
+        else:
+            messages.error(request, f"❌ Error al restaurar: {resultado['mensaje']}")
+    
+    return redirect('respaldos_view')
+
+
+@admin_requerido
+def guardar_config_respaldo_view(request):
+    """Guarda la configuración del respaldo automático"""
+    if request.method == 'POST':
+        config = ConfiguracionRespaldo.objects.first()
+        if not config:
+            config = ConfiguracionRespaldo()
+        
+        config.activo = request.POST.get('activo') == 'on'
+        
+        # Recoger días seleccionados
+        dias = request.POST.getlist('dias_semana')
+        config.dias_semana = ','.join(dias) if dias else '0,1,2,3,4,5,6'
+        
+        # Hora
+        hora_str = request.POST.get('hora', '02:00')
+        config.hora = hora_str
+        
+        # Máximo de respaldos
+        config.max_respaldos = int(request.POST.get('max_respaldos', 30))
+        
+        # Incluir media
+        config.incluir_media = request.POST.get('incluir_media') == 'on'
+        
+        config.save()
+        
+        messages.success(request, "✅ Configuración guardada correctamente.")
+    
+    return redirect('respaldos_view')
