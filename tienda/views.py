@@ -3,7 +3,7 @@ from django.template.loader import get_template
 from xhtml2pdf import pisa
 import json
 import uuid
-import datetime
+from datetime import datetime
 from decimal import Decimal
 from django.utils import timezone
 from datetime import timedelta
