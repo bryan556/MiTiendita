@@ -1,0 +1,37 @@
+--INICIO TRIGGER ANULACIONES FACTURAS
+CREATE TRIGGER trg_factura_anulada
+AFTER UPDATE OF anulada ON tienda_facturas
+FOR EACH ROW
+WHEN OLD.anulada = 0 AND NEW.anulada = 1
+BEGIN
+    INSERT INTO LogFacturasAnuladas (
+        id_factura,
+        fecha_anulacion,
+        total,
+        cliente_id
+    )
+    VALUES (
+        NEW.id_factura,
+        datetime('now'),
+        NEW.Total,
+        NEW.cliente_id
+    );
+END;
+
+
+--INICIO TRIGGER CAMBIO DE PRECIO DE PRODUCTOS
+CREATE TRIGGER trg_cambio_precio
+AFTER UPDATE ON Productos
+WHEN OLD.PrecioVenta <> NEW.PrecioVenta
+BEGIN
+    INSERT INTO HistorialPrecios(
+        producto_id,
+        precio_anterior,
+        precio_nuevo
+    )
+    VALUES(
+        NEW.Id_Producto,
+        OLD.PrecioVenta,
+        NEW.PrecioVenta
+    );
+END;

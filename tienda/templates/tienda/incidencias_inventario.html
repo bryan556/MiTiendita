@@ -1,0 +1,80 @@
+{% extends 'tienda/base.html' %}
+{% block title %}Incidencias de inventario{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <h3 class="fw-bold mb-1"><i class="fas fa-triangle-exclamation text-warning me-2"></i> Incidencias de inventario</h3>
+    <p class="text-muted">
+        Se generan cuando una venta hecha <strong>sin conexión</strong> se sincroniza y el stock del servidor no alcanzaba
+        (el producto quedó en negativo). La venta ya está registrada; aquí revisas y corriges el inventario.
+        Marcar una incidencia como revisada <strong>no cambia el stock</strong>: ajústalo desde
+        <em>Productos → Editar / Abastecer</em>.
+    </p>
+
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header fw-bold">Pendientes de revisar
+            <span class="badge bg-warning text-dark ms-1">{{ pendientes|length }}</span></div>
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th class="ps-3">Producto</th><th>Factura</th><th class="text-center">Vendidas</th>
+                        <th class="text-center">Stock antes</th><th class="text-center">Stock después</th>
+                        <th>Fecha de la venta</th><th style="min-width: 260px;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for inc in pendientes %}
+                    <tr>
+                        <td class="ps-3 fw-bold">
+                            {{ inc.producto.nombre }}
+                            <a href="{% url 'productos_editar' inc.producto.id_producto %}" class="small ms-1">ajustar</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'factura_recibo' inc.factura.id_factura %}">#{{ inc.factura.id_factura }}</a>
+                            {% if inc.factura.numero_provisional %}<small class="text-muted">({{ inc.factura.numero_provisional }})</small>{% endif %}
+                        </td>
+                        <td class="text-center">{{ inc.cantidad_vendida }}</td>
+                        <td class="text-center">{{ inc.stock_antes }}</td>
+                        <td class="text-center text-danger fw-bold">{{ inc.stock_despues }}</td>
+                        <td>{{ inc.factura.FechaHora|date:"d/m/Y H:i" }}</td>
+                        <td>
+                            <form method="POST" class="d-flex gap-2">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_incidencia" value="{{ inc.id }}">
+                                <input type="text" name="nota" class="form-control form-control-sm" maxlength="255" placeholder="Nota (opcional)">
+                                <button type="submit" class="btn btn-sm btn-success text-nowrap"><i class="fas fa-check"></i> Revisada</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="7" class="text-center text-muted py-4">No hay incidencias pendientes. ✅</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% if revisadas %}
+    <div class="card shadow-sm border-0 mb-4">
+        <div class="card-header fw-bold">Revisadas recientemente</div>
+        <div class="table-responsive">
+            <table class="table table-sm align-middle mb-0">
+                <thead><tr><th class="ps-3">Producto</th><th>Factura</th><th class="text-center">Vendidas</th><th class="text-center">Stock después</th><th>Nota</th></tr></thead>
+                <tbody>
+                {% for inc in revisadas %}
+                    <tr>
+                        <td class="ps-3">{{ inc.producto.nombre }}</td>
+                        <td>#{{ inc.factura.id_factura }}</td>
+                        <td class="text-center">{{ inc.cantidad_vendida }}</td>
+                        <td class="text-center">{{ inc.stock_despues }}</td>
+                        <td class="text-muted">{{ inc.nota|default:"—" }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

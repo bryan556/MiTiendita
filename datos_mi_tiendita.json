@@ -1,0 +1,2197 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$dTNezoO5SJrohViBdmB552$CsWHYaoIooner/3jnfhIvB7N+SA0t1qyPqit/MA+ZNw=",
+        "last_login": "2026-09-17T04:20:10.452Z",
+        "is_superuser": true,
+        "username": "Yoskary",
+        "first_name": "",
+        "last_name": "",
+        "email": "yoskary9003@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-01-27T21:24:44.865Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$OIO4OyAZJD5ZBCnzXmVdAQ$0WkZXkD/knhLcrEPf0BZtvld2f4Y0+RKzcxlpC9M1JM=",
+        "last_login": "2026-08-27T21:41:17.385Z",
+        "is_superuser": false,
+        "username": "Klaudia",
+        "first_name": "",
+        "last_name": "",
+        "email": "klaudia894@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-01-27T21:26:30.033Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1zy0op9crihzqu4s2bo5v2qafga7pr27",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAQRe_StWkoLQxxp3sP4IrMdFpBoE1aWBjj3YUEje4m_7__Mk_R4jJ37ZJdansWR6HE4TcjtIMLW8F3DLcobQxz6kluiNzbLC-R3Xje2T9Bh7lb1wSaq1IbB4SGGmsqq5grDwB1U3rtgbhgb60xVDQ1a2JfMNbGoLOgNun3R7XfIU6U3Cq_xjxgenyYFMc1PPHUB_F6AzW1S3g:1vpvnE:HnaCRPOzafOCFushdjdi-0xEdEbYIXn36NlzVwWHgXY",
+        "expire_date": "2026-02-24T22:01:12.374Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "30psena4ml1xa96945axpqkaax208vpk",
+    "fields": {
+        "session_data": ".eJxVkMFugzAQRP-Fc4UMGDC5tfd-QE_W2l6KS_CixUSqIv69piFRctudnXka7TXTsMZBrwuy9i47ZUX29qwZsCOG_eB-IHxTbilE9ibfLflxXfJPcnj-OLwvgAGWIaWVkAK6RgrRy7bqausMqFJWTqBCCUVb19iCwq7vjYRGKaeqGsuqEY2xfVkm6KNjccyBJsOY4F-0jMC_dw_TOYnvbvIhSYaYwRHrmcmtNlJ2umaPaDLMjNaTvmCIcFMshOgduNvm3R69ICbI8aC7QVuaZoYXzrO0RLKj3nukddtzzP6_wbb9AVGZfO0:1wWJYM:lmYp_OMGldo_jJY68Ot_uVL6mP7zUiBmSFgP_qasOGk",
+        "expire_date": "2026-06-21T19:53:02.414Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "9wy6jmhyq2q1xt0xd1xo628vn49ewdjk",
+    "fields": {
+        "session_data": ".eJxVjs0OgjAQhN9lz4SwUOTnpncfwBPZ7baCQGsKHIzx3Q0JErxN5vsymTc0tMxts0wmNJ1ADQjRsWPSvXErkAe5u4-1d3PoOF6VeKNTfPVihsvm_g20NLVQQ16IIlEla41aShLMEoM6F2W5lKKqxJosqRJMMWFFKEXJeWptJdqiOjFEsH_ELTs_cjBQw81PPYXXzwl-MI3245PmjodVOMvYuQPeq88XF4NWZw:1wzgVY:G16SAmrwoj0ZpnLJWSU8DwO_sbKi85IGYdML0-DBRU0",
+        "expire_date": "2026-09-10T20:15:32.634Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bsfkwma3kxn9jj8qr83ff9p4mak1p2lg",
+    "fields": {
+        "session_data": ".eJxVjssOgjAQRf-la9PQMhRkp3s_wBWZvqQCbdLCwhD-3ZKg0d3k3HNvZiUdLnPfLcnEzmnSEkZOv0yiGozfA_1E_whUBT9HJ-mu0CNN9Ba0Ga-H-zfQY-pzWxUWlNWWcWBCW45aV6UpGsmYYliBkKAEg1LWWFa1FSBAAj83UFipBPA8-v2RHbcPk4wmj99DGjC-Pk4MY4YXPTmfkcIY3RxIu27bG86dTto:1wcca1:OejwEN8SFx8n2Pg3S83t7LCLlR9qj0J4dNWp_ZiBZPI",
+        "expire_date": "2026-07-09T05:24:49.679Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gla3tkg0u6f0uu73l9dp5lbf5lylmrh4",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAQRe_StWkoLQxxp3sP4IrMdFpBoE1aWBjj3YUEje4m_7__Mk_R4jJ37ZJdansWR6HE4TcjtIMLW8F3DLcobQxz6kluiNzbLC-R3Xje2T9Bh7lb1wSaq1IbB4SGGmsqq5grDwB1U3rtgbhgb60xVDQ1a2JfMNbGoLOgNun3R7XfIU6U3Cq_xjxgenyYFMc1PPHUB_F6AzW1S3g:1vnojo:6V2oC3AIajg9vFRtvAsr5fuScYre4Ql55J56KvrgMg8",
+        "expire_date": "2026-02-19T02:04:56.071Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "k8jsywlifvu116alrp95llvvb7fhcubj",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAQRe_StWkoFErY6d4DuCIznVYq2CYtLAzh7pYEje4m77__MyvrYZmHfkkm9o5YxwQ7_TIEPRq_B_QAfw9cBz9Hh3xX-JEmfg1kpsvh_g0MkIbcRlVRXVbSKASJrZa1FkS1VUo1bWkrq5AKslpLiUXbUIVkC4JGSjBaiX30-6M4bh-eGE0ev4U0Qnx9nBimDM_0dD4jDTG6ObBu3bY3JyJQDg:1w3LRk:I2aXsbgcYzdxAQEoAFMBbCBItXX-ZNpzT5qiBfmee80",
+        "expire_date": "2026-04-02T22:02:28.788Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "krlhk0oelktshta3qtnd8qwvorrehjdk",
+    "fields": {
+        "session_data": ".eJxVjsEKwjAQRP9lzxKaJm1Kbnr3AzyV3Wxia2sCSXsQ8d-lUEVvw8zjMU_ocV2Gfi0-9yODBQmH347QTT5uA98wXpNwKS55JLEhYl-LOCf282ln_wQDlgEskFHc1Ep7Q6ipc7pxkrkJxpi2q4MKhrji4JzWVHUtK-JQMbZao3dGbtLvR7nnmO6UPVi4pDJhfnyYnGawcOT7GOH1BjW1S3g:1wESkF:tod6dlCKq9ew7Mu1nCywdOmaaqlKgDoXJcfjX78cuWg",
+        "expire_date": "2026-05-03T14:03:31.453Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "lbsnmgagk6nps530rssar75qjl2vqj4l",
+    "fields": {
+        "session_data": ".eJxVjl1rgzAUhv9KCeyuuBijjb3rrlfY7WAgJ8lR02oiMQ5G8b8v6VzZbs4J78eTcyMNLKFvlhl9YzQ5kpzs_2oS1BVtMvQFbOcy5WzwRmYpkm3unJ2dxuFly_4D9DD3sS0op1BXnNKWH4q6VFqCYLzQFAVyyA9liQcQWLet5FAJoUVRIisqWknVMhahjxvz7W3dKD1G-Lubr-C_fjPeDVE86dHYKCnw3gRHjjfC00gEvieP8hms2b15t3s148cS7ytSa_KoTCxVGU0IG4yGn6_nRQYXYNg8M0KHNnKeR9QGtpmgT6xkdPLuvjXe12BGZ5vB8p59iuwyYUfWdf0GObN9AQ:1wYa0k:t1EcanS8Wi9OAvYgwQuxvm1G8MGVBi2pESoXgRoccqI",
+        "expire_date": "2026-06-28T01:51:42.988Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mk5qijech2zwd1hwizh9lv7fqnfjjs60",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAQRe_StWkoLQxxp3sP4IrMdFpBoE1aWBjj3YUEje4m_7__Mk_R4jJ37ZJdansWR6HE4TcjtIMLW8F3DLcobQxz6kluiNzbLC-R3Xje2T9Bh7lb1wSaq1IbB4SGGmsqq5grDwB1U3rtgbhgb60xVDQ1a2JfMNbGoLOgNun3R7XfIU6U3Cq_xjxgenyYFMc1PPHUB_F6AzW1S3g:1vkqbG:3hzFkqmNKZlxh1Uk0SHSeOtJ7vamo1IDaM_J6FiMmcA",
+        "expire_date": "2026-02-10T21:27:50.851Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "nmmw9tj46g197y34x0hed2bnnnxe1ayk",
+    "fields": {
+        "session_data": ".eJytlV1r2zAUhv-KMewuZLL8Uat37cYGY9nKOsYCA3MsKbESWQqyU7aW_PfJcuzIhfiqN46Qdd7z5JxXxy9hAce2Ko4NN4Vg4W0YhQt_rwS656p7wXagtnpJtWqNKJfdkeX5bbNcacbl_fnsRKCCprLRG8pKUiYJQkAgjmPGcEwwSlMoGcoIKVlOcrbJckrpBmU0iRjPSUySHMe0LKkVHRmj81rpujTciq91swfzbzhjtLSbd6wWym5RMEa0Orx9CbPu0Slki3AM_sANBxl8NqACJsBGHAynwgbcLFEXrlrBwAali7A5lq1uwcrHafdS1LDlyoq8r7mNPT97xXc4xWhrVd3C7hdPh3WygS_L3YFvw9MiTAec1MN5PB64CT5J2PMm-AYHLUULSntYEZpyJT5Xgq5zOWlH08u75SVF8fBMJP7ORr544ItflYva841HlE2BsA8U4flCPXdaBSJ38vd9OqZOhtSJl3oFSgQPRgdfRf3niNAmVtchIh8iu87QibpCHIzuO8XdjxS1VoVUSYWf8pErygewKPeLAopLCLgKDOx8C6VzlZlpVS_oQHhvoE54xBgpfIgfoGjVVdPapj0akLyZcU08cfMMihlkHYYapEcWPPYK-816EErL4F7a6Il58Uyb5rzi9BxC6TQv-fGYH3v57ygXLQ8-aks7yY9mAWYK0Ss6BKdaVNlqzcjFtDcDyI3H8VMbOy__vsX9PUsVrU4f01-XORKR0ZTEnyQgGwgYD1pdgy3Fnhv1Jo5wwv5d6RO4pUty6U009iaa9KYSuuXX78mkKTOTFnqhy8QavRhPvGhHe2k_A_7NjOd88Orfh6fT6T-sLT_Q:1x7GUM:puEfnrqZjmhpoRGVzdI9MPLpAhFK236U_KYQpdt8bHg",
+        "expire_date": "2026-10-01T18:05:38.563Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "odnnikbzdi9hb0i8ke2lfvr8i9sqa3fo",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAQRe_StWkoLQxxp3sP4IrMdFpBoE1aWBjj3YUEje4m_7__Mk_R4jJ37ZJdansWR6HE4TcjtIMLW8F3DLcobQxz6kluiNzbLC-R3Xje2T9Bh7lb1wSaq1IbB4SGGmsqq5grDwB1U3rtgbhgb60xVDQ1a2JfMNbGoLOgNun3R7XfIU6U3Cq_xjxgenyYFMc1PPHUB_F6AzW1S3g:1vmbuy:Jos91SnPnuXsZ4Vgl0RFg2NsYCf8pwpZS_u_OSwnIlw",
+        "expire_date": "2026-02-15T18:11:28.698Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ogd7nzjll22tboomtrj2x31hyy623fw4",
+    "fields": {
+        "session_data": ".eJxVjkEOwiAQRe_C2hBKgVJ3uvcArpoBBlvbQgLtwhjvLk2q0d3k__df5kk6WJe-WzOmbnDkSCpy-M0M2BHDVrg7hFukNoYlDYZuCN3bTC_R4XTe2T9BD7kva80Eg1YJxrxo6lZaZ0BzUTuGGgVUjZTYgMbWeyNAae10LZHXiiljPedF-v2x2u8QZ5OwyK8xj5AeHybFqYQnNw-BvN6zg0oF:1wYXqU:GWJEwAd_yXByxw4-P8lNFv_D9yG-9YUxj6LjDX4BYSc",
+        "expire_date": "2026-06-27T23:32:58.653Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ooodzlio30q3oic290i1b69acx3irelz",
+    "fields": {
+        "session_data": ".eJxVjs0OgjAQhN9lz4S0y1_LTe8-gCeyZVtBoTUFDsb47oYECd4m832ZzBsaWuauWSYbm56hBgnJsTPUPqxfAd_J30LaBj_H3qSrkm50Si-B7XDe3L-BjqYOasgLLZkL5ZQTEpkJqdCZQ6xI6ZKxoMoJqoRC5lJnwqpSIts8QymkwwwS2D_KLfswmmihhmuYHhRfPyeGwTZtGJ8092ZYhROPvT_gvfp8AVRzVLs:1wzgVa:k-hBY11_EIUui2VoQRwTehgasM2ZlH6usJF_rOusQWI",
+        "expire_date": "2026-09-10T20:15:34.250Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ragy07gh08ss5flz9bo3doi2fyf4uq4c",
+    "fields": {
+        "session_data": "eyJvdHBfc2VjcmV0IjoiRFVSTFhYQkhMUjU1QzcyWUhBR1lCUEY0SlpBRlYzQkMiLCJ1c2VyX2lkX3RlbXAiOjF9:1wW2zB:ZtUIyDl73v3Lxygf8t91ArvIgBGEVgaX7vIDtLaDoh8",
+        "expire_date": "2026-06-21T02:11:37.700Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "smwl1lpl63g0vb4r50ku6gps1wybj700",
+    "fields": {
+        "session_data": ".eJxVjsEKgzAQRP9lzyLRRElya-_9gJ4kuxurVRNI9FBK_70ItrS3Yd5jmCd0bluHbss-dSODhQqK3w4dTT7sgO8u3GJJMaxpxHJXyoPm8hLZz-fD_RsYXB7AQk-MBpUSwhknpWSupalF0zhk0RqDrI3mvtVE1IuWVMVeG2mUriUhEhTw_VgdOcQFkwcL15gnlx4fJ8UZLJx4GQO83hHLSvI:1wzhqh:31izE4zaLjL3PQOFSgv0mJrKHU6ACpQfEOGzCW2C6XM",
+        "expire_date": "2026-09-10T21:41:27.356Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "so1p4wd5jh8ivarw0nyrrng8whyfv18a",
+    "fields": {
+        "session_data": ".eJxVjkEOgjAURO_y14RQkbZ0p3sP4Ir89rdSgTZpYWEIdzckaHQ3mXl5mRU6XOa-W7JNnSdQwKD47TSawYZ9oCeGRyxNDHPyutyR8lhzeYtkx-vB_gl6zD0oqBxzlupWyopIkBSa1boWgiTnzhI3TqKrSDp-ImSGNfxsNWecN41osd2l34_syCFOOllQcI95wPT6MCmOoOBCkw9QgMGU_BxBrdv2Bv2uT3M:1wKrqG:tuFHVQTLpTFN9kXD9WUKKh8VZl7QDPhbdipyatL4otI",
+        "expire_date": "2026-05-21T06:04:12.334Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "v2gart8k0lrhp57hx9bjzj9bfj9cxioy",
+    "fields": {
+        "session_data": "eyJvdHBfc2VjcmV0IjoiRFVSTFhYQkhMUjU1QzcyWUhBR1lCUEY0SlpBRlYzQkMiLCJ1c2VyX2lkX3RlbXAiOjF9:1wW36j:7Q92kXX2ZiozvtJIOjLBDm4b1eDnlHVv5a9n_wdiydQ",
+        "expire_date": "2026-06-21T02:19:25.732Z"
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 1,
+    "fields": {
+        "nombre": "Publico",
+        "apellido": "General",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 2,
+    "fields": {
+        "nombre": "Carlos",
+        "apellido": "Mendez",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 3,
+    "fields": {
+        "nombre": "Andrea",
+        "apellido": "Lopez",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 4,
+    "fields": {
+        "nombre": "Jose",
+        "apellido": "Ramirez",
+        "correo": "joooseramirez89@gmail.com",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 5,
+    "fields": {
+        "nombre": "Maria",
+        "apellido": "Gutierrez",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 6,
+    "fields": {
+        "nombre": "Kevin",
+        "apellido": "Torrez",
+        "correo": "kevtorres_@gmail.com",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 7,
+    "fields": {
+        "nombre": "Daniela",
+        "apellido": "Castillo",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 8,
+    "fields": {
+        "nombre": "Luis ",
+        "apellido": "Herrera",
+        "correo": "arceoomax@gmail.com",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 9,
+    "fields": {
+        "nombre": "Sofia",
+        "apellido": "Rojas",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 10,
+    "fields": {
+        "nombre": "Miguel",
+        "apellido": "Chavez",
+        "correo": "",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 11,
+    "fields": {
+        "nombre": "Valeria ",
+        "apellido": "Navarro",
+        "correo": "valeryjusu@gmail.com",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientes",
+    "pk": 12,
+    "fields": {
+        "nombre": "Antony",
+        "apellido": "Chavarria",
+        "correo": "antonychavarria9012@gmail.com",
+        "activo": true,
+        "esocasional": false
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 5,
+    "fields": {
+        "id_cliente": 4,
+        "numero_telefono_c": "81246671"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 7,
+    "fields": {
+        "id_cliente": 6,
+        "numero_telefono_c": "85739042"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 8,
+    "fields": {
+        "id_cliente": 7,
+        "numero_telefono_c": "82164580"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 9,
+    "fields": {
+        "id_cliente": 8,
+        "numero_telefono_c": "87841129"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 10,
+    "fields": {
+        "id_cliente": 3,
+        "numero_telefono_c": "8731-5408"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 11,
+    "fields": {
+        "id_cliente": 2,
+        "numero_telefono_c": "84521934"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 12,
+    "fields": {
+        "id_cliente": 5,
+        "numero_telefono_c": "88502197"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 13,
+    "fields": {
+        "id_cliente": 9,
+        "numero_telefono_c": "84677351"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 14,
+    "fields": {
+        "id_cliente": 10,
+        "numero_telefono_c": "88912645"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 15,
+    "fields": {
+        "id_cliente": 11,
+        "numero_telefono_c": "83557186"
+    }
+},
+{
+    "model": "tienda.clientetelefono",
+    "pk": 17,
+    "fields": {
+        "id_cliente": 12,
+        "numero_telefono_c": "83805501"
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 1,
+    "fields": {
+        "nombre_proveedor": "Empresa no existente (Compra en mercado)",
+        "correo": "no@gmail.com",
+        "direccion": "no",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 2,
+    "fields": {
+        "nombre_proveedor": "Donald Frito",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 3,
+    "fields": {
+        "nombre_proveedor": "Eddy López Pozuelo",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 4,
+    "fields": {
+        "nombre_proveedor": "Santos Vendedor Tajadas",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 5,
+    "fields": {
+        "nombre_proveedor": "La Perfecta",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 6,
+    "fields": {
+        "nombre_proveedor": "Bimbo",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 7,
+    "fields": {
+        "nombre_proveedor": "Dist ARK",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 8,
+    "fields": {
+        "nombre_proveedor": "Dist. La Amistad",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 9,
+    "fields": {
+        "nombre_proveedor": "Ronald Aceitera",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 10,
+    "fields": {
+        "nombre_proveedor": "Huevos SanFco",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 11,
+    "fields": {
+        "nombre_proveedor": "Gabriel Bicarbonato",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 12,
+    "fields": {
+        "nombre_proveedor": "Don Alvaro Pan",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 13,
+    "fields": {
+        "nombre_proveedor": "Delmor",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 14,
+    "fields": {
+        "nombre_proveedor": "Jorge Cigarros",
+        "correo": "",
+        "direccion": "",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedores",
+    "pk": 15,
+    "fields": {
+        "nombre_proveedor": "Distribuidora Karen Fabiola",
+        "correo": "no@gmail.com",
+        "direccion": "Barrio San José Oriental,gimnacio Nicarao 110 VRS al Oeste, Managua-Ni",
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 1,
+    "fields": {
+        "id_proveedor": 2,
+        "numero_telefono_p": "85072930"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 2,
+    "fields": {
+        "id_proveedor": 3,
+        "numero_telefono_p": "84315532"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 3,
+    "fields": {
+        "id_proveedor": 4,
+        "numero_telefono_p": "82508826"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 4,
+    "fields": {
+        "id_proveedor": 5,
+        "numero_telefono_p": "57521923"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 5,
+    "fields": {
+        "id_proveedor": 6,
+        "numero_telefono_p": "87989250"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 6,
+    "fields": {
+        "id_proveedor": 7,
+        "numero_telefono_p": "77999176"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 7,
+    "fields": {
+        "id_proveedor": 8,
+        "numero_telefono_p": "84295877"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 8,
+    "fields": {
+        "id_proveedor": 9,
+        "numero_telefono_p": "58601005"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 9,
+    "fields": {
+        "id_proveedor": 10,
+        "numero_telefono_p": "58298225"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 10,
+    "fields": {
+        "id_proveedor": 11,
+        "numero_telefono_p": "85348857"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 11,
+    "fields": {
+        "id_proveedor": 12,
+        "numero_telefono_p": "88189036"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 12,
+    "fields": {
+        "id_proveedor": 13,
+        "numero_telefono_p": "83374135"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 13,
+    "fields": {
+        "id_proveedor": 14,
+        "numero_telefono_p": "81965778"
+    }
+},
+{
+    "model": "tienda.proveedortelefono",
+    "pk": 14,
+    "fields": {
+        "id_proveedor": 15,
+        "numero_telefono_p": "83805501"
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 1,
+    "fields": {
+        "nombre": "Ranchitas Chile",
+        "precioventa": "10.00",
+        "cantidad": 16,
+        "rutafoto": "/media/ranchitas.jpg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 2,
+    "fields": {
+        "nombre": "Tajadas de Platano",
+        "precioventa": "13.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Tajadas_FZ2Fm5k.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 4,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 3,
+    "fields": {
+        "nombre": "Cerecitas",
+        "precioventa": "6.00",
+        "cantidad": 13,
+        "rutafoto": "/media/Cerezitas_09AlXB5.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 4,
+    "fields": {
+        "nombre": "Mani Pro Limón",
+        "precioventa": "6.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Mani%20pro%20de%20limon_ln4h2v8.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 5,
+    "fields": {
+        "nombre": "Super Flakes Napolitano",
+        "precioventa": "10.00",
+        "cantidad": 13,
+        "rutafoto": "/media/Super%20Flakes%20Napolitano_Pz9l2Od.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 6,
+    "fields": {
+        "nombre": "Cereal Gran dia",
+        "precioventa": "7.00",
+        "cantidad": 14,
+        "rutafoto": "/media/Cereal%20gran%20dia_vpY4faJ.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 7,
+    "fields": {
+        "nombre": "Tortrix",
+        "precioventa": "10.00",
+        "cantidad": 18,
+        "rutafoto": "/media/Tortrix_to5S5VJ.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 8,
+    "fields": {
+        "nombre": "Ranchitas Naturales",
+        "precioventa": "10.00",
+        "cantidad": 18,
+        "rutafoto": "/media/ranchitas%20naturales.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 9,
+    "fields": {
+        "nombre": "Perlitas",
+        "precioventa": "6.00",
+        "cantidad": 12,
+        "rutafoto": "/media/Perlitas_KKAfh2s.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 10,
+    "fields": {
+        "nombre": "Naturisimo",
+        "precioventa": "6.00",
+        "cantidad": 19,
+        "rutafoto": "/media/Naturisimo_1zKap0Z.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 11,
+    "fields": {
+        "nombre": "Consomé de pollo",
+        "precioventa": "6.00",
+        "cantidad": 23,
+        "rutafoto": "/media/Consome%20de%20pollo_IaM8dPG.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 12,
+    "fields": {
+        "nombre": "Ajo Molido",
+        "precioventa": "7.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Ajo%20molido_ADB1Fdu.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 13,
+    "fields": {
+        "nombre": "Palitos Max",
+        "precioventa": "10.00",
+        "cantidad": 24,
+        "rutafoto": "/media/palitos_vaGskx5.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 14,
+    "fields": {
+        "nombre": "Sabor y color",
+        "precioventa": "6.00",
+        "cantidad": 12,
+        "rutafoto": "/media/Sabor%20y%20color.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 15,
+    "fields": {
+        "nombre": "Pimienta Mckornie",
+        "precioventa": "6.00",
+        "cantidad": 24,
+        "rutafoto": "/media/Pimienta%20Mckornie.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 16,
+    "fields": {
+        "nombre": "Pimienta Favora",
+        "precioventa": "5.00",
+        "cantidad": 12,
+        "rutafoto": "/media/Pimienta%20Favora.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 17,
+    "fields": {
+        "nombre": "Canela en polvo",
+        "precioventa": "5.00",
+        "cantidad": 24,
+        "rutafoto": "/media/Canela%20en%20polvo.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 18,
+    "fields": {
+        "nombre": "Canela en raja",
+        "precioventa": "5.00",
+        "cantidad": 23,
+        "rutafoto": "/media/Canela%20en%20raja.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 19,
+    "fields": {
+        "nombre": "Salsa de tomate kerns",
+        "precioventa": "10.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Salsa%20de%20tomate%20kerns.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 20,
+    "fields": {
+        "nombre": "sopa maggie",
+        "precioventa": "16.00",
+        "cantidad": 23,
+        "rutafoto": "/media/sopa%20maggie.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 8,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 21,
+    "fields": {
+        "nombre": "Achiote",
+        "precioventa": "5.00",
+        "cantidad": 12,
+        "rutafoto": "/media/achiote.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 22,
+    "fields": {
+        "nombre": "Aceite Doral",
+        "precioventa": "120.00",
+        "cantidad": 14,
+        "rutafoto": "/media/Aceite%20Doral_h6MYd95.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 9,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 23,
+    "fields": {
+        "nombre": "Aceite Rico",
+        "precioventa": "23.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Aceite%20Rico.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 9,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 24,
+    "fields": {
+        "nombre": "Pinol Blanco",
+        "precioventa": "12.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Pinol%20blanco.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 25,
+    "fields": {
+        "nombre": "Avena sasa",
+        "precioventa": "7.00",
+        "cantidad": 13,
+        "rutafoto": "/media/Avena%20sasa.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 26,
+    "fields": {
+        "nombre": "pinolillo sasa",
+        "precioventa": "8.00",
+        "cantidad": 11,
+        "rutafoto": "/media/pinolillo%20sasa.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 27,
+    "fields": {
+        "nombre": "Avena Quaker",
+        "precioventa": "10.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Avena%20quaker.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 28,
+    "fields": {
+        "nombre": "Maizena",
+        "precioventa": "12.00",
+        "cantidad": 12,
+        "rutafoto": "/media/Maizena.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 29,
+    "fields": {
+        "nombre": "Arroz Faisan",
+        "precioventa": "30.00",
+        "cantidad": 13,
+        "rutafoto": "/media/Arroz%20Faisan_8i9o6yK.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 7,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 30,
+    "fields": {
+        "nombre": "Arroz doña maria",
+        "precioventa": "29.00",
+        "cantidad": 20,
+        "rutafoto": "/media/Arroz%20do%C3%B1a%20maria.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 7,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 31,
+    "fields": {
+        "nombre": "Espaguetti Roma",
+        "precioventa": "26.00",
+        "cantidad": 11,
+        "rutafoto": "/media/Espaguetti%20Roma.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 7,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 32,
+    "fields": {
+        "nombre": "Maruchan Vaso pollo",
+        "precioventa": "45.00",
+        "cantidad": 14,
+        "rutafoto": "/media/Maruchan%20Vaso%20pollo.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 33,
+    "fields": {
+        "nombre": "Maruchan bolsa pollo",
+        "precioventa": "25.00",
+        "cantidad": 8,
+        "rutafoto": "/media/Maruchan%20bolsa%20pollo.jpeg",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 34,
+    "fields": {
+        "nombre": "Pan barra",
+        "precioventa": "30.00",
+        "cantidad": 12,
+        "rutafoto": "",
+        "stockminimo": 10,
+        "activo": true,
+        "idproveedor": 1,
+        "codigo_barra": null
+    }
+},
+{
+    "model": "tienda.productos",
+    "pk": 35,
+    "fields": {
+        "nombre": "cuaderno",
+        "precioventa": "10.00",
+        "cantidad": 10,
+        "rutafoto": "",
+        "stockminimo": 5,
+        "activo": true,
+        "idproveedor": 11,
+        "codigo_barra": "6930663328484"
+    }
+},
+{
+    "model": "tienda.escaneopendiente",
+    "pk": 1,
+    "fields": {
+        "ultimo_codigo": null,
+        "recibido_en": "2026-09-17T18:00:14.203Z"
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 1,
+    "fields": {
+        "proveedor": 1,
+        "producto": 1,
+        "preciocompra": "80.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 2,
+    "fields": {
+        "proveedor": 4,
+        "producto": 2,
+        "preciocompra": "120.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 3,
+    "fields": {
+        "proveedor": 1,
+        "producto": 3,
+        "preciocompra": "60.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 4,
+    "fields": {
+        "proveedor": 1,
+        "producto": 4,
+        "preciocompra": "60.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 5,
+    "fields": {
+        "proveedor": 1,
+        "producto": 5,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 6,
+    "fields": {
+        "proveedor": 1,
+        "producto": 6,
+        "preciocompra": "60.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 7,
+    "fields": {
+        "proveedor": 1,
+        "producto": 7,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 8,
+    "fields": {
+        "proveedor": 1,
+        "producto": 8,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 9,
+    "fields": {
+        "proveedor": 1,
+        "producto": 9,
+        "preciocompra": "60.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 10,
+    "fields": {
+        "proveedor": 1,
+        "producto": 10,
+        "preciocompra": "55.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 11,
+    "fields": {
+        "proveedor": 1,
+        "producto": 11,
+        "preciocompra": "55.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 12,
+    "fields": {
+        "proveedor": 1,
+        "producto": 12,
+        "preciocompra": "65.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 13,
+    "fields": {
+        "proveedor": 1,
+        "producto": 13,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 14,
+    "fields": {
+        "proveedor": 1,
+        "producto": 14,
+        "preciocompra": "55.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 15,
+    "fields": {
+        "proveedor": 1,
+        "producto": 15,
+        "preciocompra": "55.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 16,
+    "fields": {
+        "proveedor": 1,
+        "producto": 16,
+        "preciocompra": "42.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 17,
+    "fields": {
+        "proveedor": 1,
+        "producto": 17,
+        "preciocompra": "30.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 18,
+    "fields": {
+        "proveedor": 1,
+        "producto": 18,
+        "preciocompra": "42.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 19,
+    "fields": {
+        "proveedor": 1,
+        "producto": 19,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 20,
+    "fields": {
+        "proveedor": 8,
+        "producto": 20,
+        "preciocompra": "125.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 21,
+    "fields": {
+        "proveedor": 1,
+        "producto": 21,
+        "preciocompra": "45.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 22,
+    "fields": {
+        "proveedor": 9,
+        "producto": 22,
+        "preciocompra": "100.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 23,
+    "fields": {
+        "proveedor": 9,
+        "producto": 23,
+        "preciocompra": "204.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 24,
+    "fields": {
+        "proveedor": 1,
+        "producto": 24,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 25,
+    "fields": {
+        "proveedor": 1,
+        "producto": 25,
+        "preciocompra": "64.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 26,
+    "fields": {
+        "proveedor": 1,
+        "producto": 26,
+        "preciocompra": "68.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 27,
+    "fields": {
+        "proveedor": 1,
+        "producto": 27,
+        "preciocompra": "100.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 28,
+    "fields": {
+        "proveedor": 1,
+        "producto": 28,
+        "preciocompra": "120.00",
+        "cantidadcompra": 12,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 29,
+    "fields": {
+        "proveedor": 7,
+        "producto": 29,
+        "preciocompra": "24.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 30,
+    "fields": {
+        "proveedor": 7,
+        "producto": 30,
+        "preciocompra": "23.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 31,
+    "fields": {
+        "proveedor": 7,
+        "producto": 31,
+        "preciocompra": "21.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 32,
+    "fields": {
+        "proveedor": 1,
+        "producto": 32,
+        "preciocompra": "35.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 33,
+    "fields": {
+        "proveedor": 1,
+        "producto": 33,
+        "preciocompra": "20.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 34,
+    "fields": {
+        "proveedor": 1,
+        "producto": 34,
+        "preciocompra": "50.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.proveedorproducto",
+    "pk": 35,
+    "fields": {
+        "proveedor": 11,
+        "producto": 35,
+        "preciocompra": "2.00",
+        "cantidadcompra": 1,
+        "activo": true
+    }
+},
+{
+    "model": "tienda.egresos",
+    "pk": 10,
+    "fields": {
+        "fecha": "2026-06-15T06:23:01.404Z",
+        "concepto": "Compra: Mani Pro Limón (1 paq. a Empresa no existente (Compra en mercado))",
+        "monto": "60.00"
+    }
+},
+{
+    "model": "tienda.egresos",
+    "pk": 11,
+    "fields": {
+        "fecha": "2026-06-15T06:26:32.141Z",
+        "concepto": "Compra: Arroz doña maria (1 paq. a Dist ARK)",
+        "monto": "23.00"
+    }
+},
+{
+    "model": "tienda.egresos",
+    "pk": 12,
+    "fields": {
+        "fecha": "2026-06-15T06:46:23.765Z",
+        "concepto": "Compra: Ranchitas Chile (1 paq. a Empresa no existente (Compra en mercado))",
+        "monto": "80.00"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 14,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T05:47:49.505Z",
+        "fecha_cierre": "2026-06-15T05:54:35.993Z",
+        "monto_inicial": "1000.00",
+        "monto_final": "1040.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":2,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 15,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T05:57:35.204Z",
+        "fecha_cierre": "2026-06-15T06:00:18.507Z",
+        "monto_inicial": "1040.00",
+        "monto_final": "1100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":2,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 16,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T06:00:37.203Z",
+        "fecha_cierre": "2026-06-15T06:01:05.019Z",
+        "monto_inicial": "900.00",
+        "monto_final": "1000.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 17,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T06:13:01.186Z",
+        "fecha_cierre": "2026-06-15T06:24:34.506Z",
+        "monto_inicial": "1100.00",
+        "monto_final": "1076.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":1,\"C$ 20\":1,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":1,\"Mon. C$ 1\":1},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 18,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T06:26:02.882Z",
+        "fecha_cierre": "2026-06-15T06:44:14.487Z",
+        "monto_inicial": "20.00",
+        "monto_final": "1000.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 19,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T06:44:43.153Z",
+        "fecha_cierre": "2026-06-15T06:44:52.568Z",
+        "monto_inicial": "1000.00",
+        "monto_final": "1000.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":1,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 20,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T06:44:58.624Z",
+        "fecha_cierre": "2026-06-15T06:47:02.106Z",
+        "monto_inicial": "20.00",
+        "monto_final": "30.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":1,\"C$ 10\":1,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 21,
+    "fields": {
+        "usuario": null,
+        "fecha_apertura": "2026-06-15T14:54:24.432Z",
+        "fecha_cierre": "2026-06-15T14:56:27.336Z",
+        "monto_inicial": "500.00",
+        "monto_final": "506.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":1,\"C$ 200\":0,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":1,\"Mon. C$ 1\":1},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 22,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T04:54:14.512Z",
+        "fecha_cierre": "2026-06-25T04:55:38.382Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 23,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T04:54:14.550Z",
+        "fecha_cierre": "2026-06-25T04:54:42.945Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 24,
+    "fields": {
+        "usuario": [
+            "Klaudia"
+        ],
+        "fecha_apertura": "2026-06-25T05:15:38.098Z",
+        "fecha_cierre": "2026-06-25T05:16:24.779Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 25,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T05:17:20.339Z",
+        "fecha_cierre": "2026-06-25T05:17:52.013Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 26,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T05:17:20.368Z",
+        "fecha_cierre": "2026-06-25T05:17:27.743Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 27,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T05:18:14.911Z",
+        "fecha_cierre": "2026-06-25T05:18:22.134Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 28,
+    "fields": {
+        "usuario": [
+            "Klaudia"
+        ],
+        "fecha_apertura": "2026-06-25T05:19:04.936Z",
+        "fecha_cierre": "2026-06-25T05:19:15.587Z",
+        "monto_inicial": "100.00",
+        "monto_final": "100.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":0,\"C$ 100\":1,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":0,\"Mon. C$ 5\":0,\"Mon. C$ 1\":0},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 29,
+    "fields": {
+        "usuario": [
+            "Yoskary"
+        ],
+        "fecha_apertura": "2026-06-25T05:22:00.643Z",
+        "fecha_cierre": "2026-06-25T05:30:02.864Z",
+        "monto_inicial": "100.00",
+        "monto_final": "217.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":1,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":0,\"Bill. C$ 5\":1,\"Mon. C$ 5\":2,\"Mon. C$ 1\":2},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.cajadiaria",
+    "pk": 30,
+    "fields": {
+        "usuario": [
+            "Klaudia"
+        ],
+        "fecha_apertura": "2026-06-25T05:23:29.571Z",
+        "fecha_cierre": "2026-06-25T05:30:30.731Z",
+        "monto_inicial": "100.00",
+        "monto_final": "217.00",
+        "activa": false,
+        "arqueo_desglose": "{\"cordobas\":{\"C$ 1000\":0,\"C$ 500\":0,\"C$ 200\":1,\"C$ 100\":0,\"C$ 50\":0,\"C$ 20\":0,\"C$ 10\":1,\"Bill. C$ 5\":0,\"Mon. C$ 5\":1,\"Mon. C$ 1\":2},\"dolares\":{\"$ 20\":0,\"$ 10\":0,\"$ 5\":0,\"$ 2\":0,\"$ 1\":0},\"tasa\":36.6}"
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 46,
+    "fields": {
+        "FechaHora": "2026-06-15T05:50:33.037Z",
+        "cliente": 1,
+        "Total": "20.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 47,
+    "fields": {
+        "FechaHora": "2026-06-15T05:52:23.741Z",
+        "cliente": 1,
+        "Total": "14.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 48,
+    "fields": {
+        "FechaHora": "2026-06-15T05:53:48.568Z",
+        "cliente": 2,
+        "Total": "6.00",
+        "CostoEnvio": "0.00",
+        "anulada": true,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 49,
+    "fields": {
+        "FechaHora": "2026-06-15T05:58:16.248Z",
+        "cliente": 6,
+        "Total": "30.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 50,
+    "fields": {
+        "FechaHora": "2026-06-15T05:59:28.018Z",
+        "cliente": 1,
+        "Total": "30.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 51,
+    "fields": {
+        "FechaHora": "2026-06-15T06:13:19.035Z",
+        "cliente": 1,
+        "Total": "26.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 52,
+    "fields": {
+        "FechaHora": "2026-06-15T06:22:09.095Z",
+        "cliente": 1,
+        "Total": "10.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 53,
+    "fields": {
+        "FechaHora": "2026-06-15T06:45:25.936Z",
+        "cliente": 1,
+        "Total": "60.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 54,
+    "fields": {
+        "FechaHora": "2026-06-15T06:46:52.990Z",
+        "cliente": 1,
+        "Total": "30.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 55,
+    "fields": {
+        "FechaHora": "2026-06-15T14:53:28.321Z",
+        "cliente": 1,
+        "Total": "12.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 56,
+    "fields": {
+        "FechaHora": "2026-06-15T14:54:05.249Z",
+        "cliente": 1,
+        "Total": "6.00",
+        "CostoEnvio": "0.00",
+        "anulada": true,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 57,
+    "fields": {
+        "FechaHora": "2026-06-15T14:54:51.945Z",
+        "cliente": 1,
+        "Total": "6.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 58,
+    "fields": {
+        "FechaHora": "2026-06-15T14:56:51.672Z",
+        "cliente": 1,
+        "Total": "12.00",
+        "CostoEnvio": "0.00",
+        "anulada": true,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 59,
+    "fields": {
+        "FechaHora": "2026-06-25T05:24:21.418Z",
+        "cliente": 1,
+        "Total": "36.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.facturas",
+    "pk": 60,
+    "fields": {
+        "FechaHora": "2026-06-25T05:24:49.667Z",
+        "cliente": 1,
+        "Total": "81.00",
+        "CostoEnvio": "0.00",
+        "anulada": false,
+        "en_deuda": false
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 62,
+    "fields": {
+        "id_factura": 46,
+        "id_producto": 1,
+        "Cantidad": 2,
+        "Subtotal": "20.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 63,
+    "fields": {
+        "id_factura": 47,
+        "id_producto": 6,
+        "Cantidad": 2,
+        "Subtotal": "14.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 64,
+    "fields": {
+        "id_factura": 48,
+        "id_producto": 4,
+        "Cantidad": 1,
+        "Subtotal": "6.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 65,
+    "fields": {
+        "id_factura": 49,
+        "id_producto": 7,
+        "Cantidad": 3,
+        "Subtotal": "30.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 66,
+    "fields": {
+        "id_factura": 50,
+        "id_producto": 10,
+        "Cantidad": 5,
+        "Subtotal": "30.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 67,
+    "fields": {
+        "id_factura": 51,
+        "id_producto": 2,
+        "Cantidad": 2,
+        "Subtotal": "26.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 68,
+    "fields": {
+        "id_factura": 52,
+        "id_producto": 5,
+        "Cantidad": 1,
+        "Subtotal": "10.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 69,
+    "fields": {
+        "id_factura": 53,
+        "id_producto": 1,
+        "Cantidad": 6,
+        "Subtotal": "60.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 70,
+    "fields": {
+        "id_factura": 54,
+        "id_producto": 4,
+        "Cantidad": 5,
+        "Subtotal": "30.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 71,
+    "fields": {
+        "id_factura": 55,
+        "id_producto": 3,
+        "Cantidad": 2,
+        "Subtotal": "12.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 72,
+    "fields": {
+        "id_factura": 56,
+        "id_producto": 3,
+        "Cantidad": 1,
+        "Subtotal": "6.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 73,
+    "fields": {
+        "id_factura": 57,
+        "id_producto": 3,
+        "Cantidad": 1,
+        "Subtotal": "6.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 74,
+    "fields": {
+        "id_factura": 58,
+        "id_producto": 3,
+        "Cantidad": 2,
+        "Subtotal": "12.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 75,
+    "fields": {
+        "id_factura": 59,
+        "id_producto": 8,
+        "Cantidad": 3,
+        "Subtotal": "30.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 76,
+    "fields": {
+        "id_factura": 59,
+        "id_producto": 4,
+        "Cantidad": 1,
+        "Subtotal": "6.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 77,
+    "fields": {
+        "id_factura": 60,
+        "id_producto": 33,
+        "Cantidad": 1,
+        "Subtotal": "25.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 78,
+    "fields": {
+        "id_factura": 60,
+        "id_producto": 31,
+        "Cantidad": 1,
+        "Subtotal": "26.00"
+    }
+},
+{
+    "model": "tienda.detallefactura",
+    "pk": 79,
+    "fields": {
+        "id_factura": 60,
+        "id_producto": 29,
+        "Cantidad": 1,
+        "Subtotal": "30.00"
+    }
+},
+{
+    "model": "tienda.clienteidentidad",
+    "pk": 4,
+    "fields": {
+        "cliente": 2,
+        "foto_frontal": "identidades/artificial.png",
+        "foto_trasera": "identidades/planning.png",
+        "fecha_registro": "2026-06-14T01:51:36.924Z"
+    }
+},
+{
+    "model": "tienda.devolucionesperdidas",
+    "pk": 6,
+    "fields": {
+        "producto": 6,
+        "tipo_evento": "DEV_CLIENTE",
+        "cantidad": 1,
+        "motivo": "mal estado",
+        "estado_proveedor": "RESUELTO",
+        "fecha": "2026-06-15T06:11:32.445Z"
+    }
+},
+{
+    "model": "tienda.devolucionesperdidas",
+    "pk": 7,
+    "fields": {
+        "producto": 1,
+        "tipo_evento": "PERDIDA_LOCAL",
+        "cantidad": 1,
+        "motivo": "salieron con gusanos",
+        "estado_proveedor": "NO_APLICA",
+        "fecha": "2026-06-15T06:15:46.543Z"
+    }
+}
+]

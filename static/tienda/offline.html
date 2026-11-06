@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Conexión - MiTiendita</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fef3c7;
+            color: #92400e;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📡</div>
+        <h1>Sin Conexión</h1>
+        <div class="status">🔴 OFFLINE</div>
+        <p>
+            No se puede conectar al servidor en este momento.<br>
+            Verifica tu conexión a internet e intenta de nuevo.
+        </p>
+        <button onclick="window.location.reload()">
+            🔄 Reintentar
+        </button>
+        <div class="info">
+            <strong>MiTiendita</strong> - Modo Offline<br>
+            <small>Las facturas pendientes se sincronizarán automáticamente cuando vuelva el internet</small>
+        </div>
+    </div>
+    
+    <script>
+        // Detectar cuando vuelve el internet y recargar automáticamente
+        window.addEventListener('online', () => {
+            console.log('✅ Internet restaurado, recargando...');
+            window.location.reload();
+        });
+        
+        // Verificar cada 5 segundos si hay internet
+        setInterval(() => {
+            if (navigator.onLine) {
+                fetch('/', { method: 'HEAD' })
+                    .then(() => window.location.reload())
+                    .catch(() => {});
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+"""
+Django settings for MiTiendita project.
+CONFIGURACIÓN CORREGIDA PARA PYTHONANYWHERE (SQLite)
+"""
+
+from pathlib import Path
+import os
+
+# 1. BASE_DIR: Carpeta principal del proyecto
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SECURITY WARNING: Clave secreta (en producción deberías cambiarla, pero para el proyecto sirve)
+SECRET_KEY = 'django-insecure-lm$9k4_1c_qq08c4nzwuuj9&unx0^v^hprd25s(4-b+t!=b@tk'
+
+# DEBUG activado para ver errores si salen
+DEBUG = True
+
+# Permitir que la página se vea desde cualquier lugar (incluido PythonAnywhere)
+ALLOWED_HOSTS = ['*']
+
+# Application definition
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'tienda',   # Tu app principal
+    'usuarios', # Tu app de usuarios
+    
+    
+]
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'MiTiendita.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'tienda', 'templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'MiTiendita.wsgi.application'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'Mitiendita.sqlite3',
+    }
+}
+
+# Password validation
+AUTH_PASSWORD_VALIDATORS = [
+    { 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
+    { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
+]
+
+# Internationalization
+LANGUAGE_CODE = 'es-ni'
+TIME_ZONE = 'America/Managua'
+USE_I18N = True
+USE_TZ = True
+
+# --- ARCHIVOS ESTÁTICOS ---
+STATIC_URL = '/static/'
+# Esta carpeta es donde PythonAnywhere buscará los archivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "MiTiendita", "static"),
+    os.path.join(BASE_DIR, "Imagenes"),
+]
+
+# --- ARCHIVOS MULTIMEDIA ---
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
+# --- CONFIGURACIÓN DE IMÁGENES ---
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/app.log'),
+        },
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': [],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'miapp': {  # nombre personalizado
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
